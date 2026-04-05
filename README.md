@@ -21,7 +21,7 @@
 ## 🎥 Live Demo
 
 👉 **Live Application:** https://your-deployed-link.com
-👉 **Demo Video:** https://your-video-link.com
+
 
 ---
 
