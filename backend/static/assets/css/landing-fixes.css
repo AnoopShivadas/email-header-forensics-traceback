@@ -1,0 +1,258 @@
+/* =========================================================
+   LANDING PAGE FIXES (NON-DESTRUCTIVE OVERRIDES)
+   Fixes button behavior, glow overflow, hover artifacts
+========================================================= */
+
+/* ---------------------------------------------------------
+   1. FIX: Anchor buttons behaving like text
+--------------------------------------------------------- */
+a.btn-login,
+a.btn-primary {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+/* Remove underline in all states */
+a.btn-login:hover,
+a.btn-login:focus,
+a.btn-login:active,
+a.btn-login:visited {
+    text-decoration: none !important;
+}
+
+/* ---------------------------------------------------------
+   2. FIX: Button hover shine escaping boundaries
+--------------------------------------------------------- */
+.btn-login,
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   3. FIX: Hero glow bleeding into other sections
+--------------------------------------------------------- */
+.hero {
+    overflow: hidden;
+}
+
+/* Contain glow strictly within hero */
+.hero::before,
+.hero::after {
+    inset: -15% !important;   /* reduced from -30% */
+}
+
+/* ---------------------------------------------------------
+   4. SAFETY: Prevent accidental horizontal bleed
+--------------------------------------------------------- */
+body {
+    overflow-x: hidden;
+}
+/* ---------------------------------------------------------
+   FIX: Hero glow blocking button clicks
+--------------------------------------------------------- */
+.hero::before,
+.hero::after {
+    pointer-events: none !important;
+}
+/* =========================================================
+   FINAL FIX – CTA BUTTON SHINE (REAL FIX)
+   Applies ONLY to Launch Analysis Dashboard button
+========================================================= */
+
+/* Base button already correct */
+.btn-primary{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Replace full-width shine with narrow strip */
+.btn-primary::after{
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -40%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* Move shine across button ONLY */
+.btn-primary:hover::after{
+  transform: translateX(500%);
+}
+
+/* =========================================================
+   FINAL OVERRIDE – REMOVE SHINE, KEEP CLEAN HOVER
+   Applies ONLY to Launch Analysis Dashboard button
+========================================================= */
+
+/* Kill shine animation completely */
+.btn-primary::after {
+    content: none !important;
+}
+
+/* Clean, professional hover effect */
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+}
+
+/* Ensure smooth interaction */
+.btn-primary {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* =========================================================
+   PLATFORM HEADER EXTRACTION GUIDE
+========================================================= */
+
+.workflow-platforms{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  margin-top:60px;
+}
+
+.platform-card{
+  background:white;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.3s ease;
+}
+
+.platform-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 50px rgba(0,0,0,.15);
+}
+
+.platform-card h4{
+  margin-bottom:14px;
+  font-size:18px;
+  font-weight:800;
+}
+
+.platform-card ol{
+  padding-left:18px;
+}
+
+.platform-card li{
+  font-size:14px;
+  color:#475569;
+  margin-bottom:8px;
+}
+/* =========================================================
+   FEATURE GRID – TRUE VISUAL CENTERING
+========================================================= */
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
+  justify-content:center;
+  gap:36px;
+}
+
+/* Force last row to center when fewer items */
+.features-grid > .feature-card{
+  max-width:340px;
+  margin-inline:auto;
+}
+
+/* Responsive fallback */
+@media (max-width: 1100px){
+  .features-grid{
+    grid-template-columns:repeat(2, minmax(260px, 1fr));
+  }
+}
+@media (max-width: 700px){
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =========================================================
+   MICRO-POLISH (PROFESSIONAL FEEL)
+========================================================= */
+
+/* Softer hero subtitle */
+.hero-subtitle{
+  max-width:780px;
+  margin-inline:auto;
+}
+
+/* Section spacing harmony */
+.section-title{
+  letter-spacing:-0.5px;
+}
+
+/* Footer refinement */
+.landing-footer{
+  font-size:13px;
+  opacity:0.9;
+}
+/* =========================================================
+   HOW SECTION – MODERN PRODUCT STYLE
+========================================================= */
+
+.refined-how{
+  background:linear-gradient(180deg,#f8fafc,#eef2ff);
+  padding:140px 0;
+}
+
+.section-subtitle{
+  max-width:720px;
+  margin:18px auto 70px;
+  text-align:center;
+  color:#475569;
+  font-size:18px;
+}
+
+/* GRID */
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:36px;
+  justify-content:center;
+}
+
+/* CARD */
+.how-card{
+  background:white;
+  border-radius:22px;
+  padding:36px 28px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.35s ease;
+}
+
+.how-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 28px 60px rgba(0,0,0,.15);
+}
+
+/* ICON */
+.how-icon{
+  font-size:42px;
+  margin-bottom:16px;
+}
+
+/* TITLE */
+.how-card h4{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+/* TEXT */
+.how-card p{
+  font-size:14px;
+  color:#475569;
+}

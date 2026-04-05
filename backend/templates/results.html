@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Email Threat Analysis · Email Forensics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/results-clean.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/export-ui.css') }}">
+</head>
+
+<body class="dashboard-page page-results">
+<div class="dashboard-wrapper">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header"><h2>Email Forensics</h2></div>
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="nav-item">🔍 Analyze Email</a>
+    <a href="/results" class="nav-item active">📊 Analysis Results</a>
+    <a href="/geolocation" class="nav-item">🌍 IP Geolocation</a>
+    <a href="/history-page" class="nav-item">📜 History</a>
+    <a href="/settings" class="nav-item">⚙️ Settings</a>
+    <a href="/logout" class="nav-item nav-logout">🚪 Logout</a>
+  </nav>
+</aside>
+
+<main class="main-content">
+
+<header class="page-header">
+  <button id="menuToggle" class="menu-btn">☰</button>
+  <h1>Email Threat Analysis</h1>
+  <span class="subtitle">Automated header-based risk assessment</span>
+</header>
+
+<!-- TOP ROW -->
+<section class="results-top">
+
+  <!-- SCORE -->
+  <div class="score-card">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" class="bg"/>
+      <circle cx="100" cy="100" r="80" class="progress" id="riskProgress"/>
+    </svg>
+    <div class="score-center">
+      <div id="riskScore">0</div>
+      <small>Risk Score</small>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict-card" id="verdictCard">
+    <h2 id="verdictText">—</h2>
+    <p id="verdictSummary">Evaluating risk indicators…</p>
+
+    <div class="auth-row">
+      <span class="auth-chip" id="spfBadge">SPF</span>
+      <span class="auth-chip" id="dkimBadge">DKIM</span>
+      <span class="auth-chip" id="dmarcBadge">DMARC</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- RISK BREAKDOWN -->
+<section class="card">
+  <div class="card-header">Risk Breakdown</div>
+  <div class="card-body">
+    <ul id="riskFactors" class="risk-bars"></ul>
+  </div>
+</section>
+
+<!-- HEADER INFO -->
+<section class="card">
+  <div class="card-header">Header Intelligence</div>
+  <div class="card-body info-grid">
+    <div><label>From</label><span id="fromVal">—</span></div>
+    <div><label>To</label><span id="toVal">—</span></div>
+    <div><label>Subject</label><span id="subjectVal">—</span></div>
+    <div><label>Date</label><span id="dateVal">—</span></div>
+    <div><label>IP Hops</label><span id="hopCount">—</span></div>
+  </div>
+</section>
+
+<div class="action-buttons">
+  <a href="/geolocation" class="btn-primary">View IP Geolocation</a>
+  <button class="btn-secondary" id="openExport">⬇ Export</button>
+</div>
+
+<div id="exportBackdrop" class="export-backdrop">
+  <div class="export-modal">
+    <h3>Export Analysis</h3>
+    <p>Download the current analysis in your preferred format.</p>
+
+    <div class="export-options">
+      <button class="export-option" data-format="csv">📄 CSV</button>
+      <button class="export-option" data-format="json">🧾 JSON</button>
+      <!-- NEW: PDF -->
+      <button class="export-option" data-format="pdf">📑 PDF</button>
+    </div>
+
+    <div class="export-actions">
+      <button class="btn-secondary" id="closeExport">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+</main>
+</div>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/results-clean.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/export.js') }}"></script>
+</body>
+</html>

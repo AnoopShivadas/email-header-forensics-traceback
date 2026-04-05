@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings · Email Forensics</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+</head>
+
+<body class="dashboard-page page-settings">
+
+<div class="dashboard-wrapper">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <div class="sidebar-header"><h2>Email Forensics</h2></div>
+    <nav class="sidebar-nav">
+        <a href="/dashboard" class="nav-item">🔍 Analyze Email</a>
+        <a href="/results" class="nav-item">📊 Analysis Results</a>
+        <a href="/geolocation" class="nav-item">🌍 IP Geolocation</a>
+        <a href="/history-page" class="nav-item">📜 History</a>
+        <a href="/settings" class="nav-item active">⚙️ Settings</a>
+        <a href="/logout" class="nav-item nav-logout">🚪 Logout</a>
+    </nav>
+</aside>
+
+<main class="main-content">
+
+<header class="page-header">
+    <button id="menuToggle" class="menu-btn">☰</button>
+    <h1>Settings</h1>
+    <div class="user-info">
+        <span class="user-name">{{ session.get('name','Security Analyst') }}</span>
+        <div class="user-avatar">👤</div>
+    </div>
+</header>
+
+<div class="content-wrapper">
+
+<!-- APPEARANCE -->
+<div class="card reveal">
+    <div class="card-header">Appearance</div>
+    <div class="card-body">
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Theme</h4>
+                <p>Choose interface theme</p>
+            </div>
+            <div class="theme-toggle">
+                <button type="button" class="theme-btn active" data-theme="light">☀️ Light</button>
+                <button type="button" class="theme-btn" data-theme="dark">🌙 Dark</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ACCOUNT -->
+<div class="card reveal">
+    <div class="card-header">Account Information</div>
+    <div class="card-body account-info-grid">
+        <div class="info-item"><label>Name</label><p>{{ session.get('name','—') }}</p></div>
+        <div class="info-item"><label>Email</label><p>{{ session.get('email','—') }}</p></div>
+        <div class="info-item"><label>Authentication Provider</label><p>{{ session.get('auth_provider','Google')|capitalize }}</p></div>
+        <div class="info-item"><label>Account Status</label><p style="color:#22c55e;font-weight:600;">Active</p></div>
+        <div class="info-item">
+            <label>Last Login</label>
+            <p id="lastLoginTime" data-utc="{{ session.get('login_time','') }}">
+                {{ session.get('login_time','—') }}
+            </p>
+        </div>
+        <div class="info-item">
+            <label>Session ID</label>
+            <p style="font-family:monospace;font-size:0.85rem;">
+                {{ session.get('session_id','—') }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- PREFERENCES -->
+<div class="card reveal">
+    <div class="card-header">Preferences</div>
+    <div class="card-body">
+
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Auto-save Analysis</h4>
+                <p>Save analysis results automatically</p>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="autoSaveToggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Email Notifications</h4>
+                <p>Notify after analysis completion</p>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="emailNotifyToggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <!-- ✅ NEW EXPORT REPORTS SECTION -->
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Export Reports</h4>
+                <p>Download complete analysis history</p>
+            </div>
+
+            <div style="display:flex; gap:10px;">
+                <button class="btn-secondary" onclick="window.location.href='/export/history'">
+                    ⬇ CSV
+                </button>
+                <button class="btn-secondary" onclick="window.location.href='/export/history/json'">
+                    ⬇ JSON
+                </button>
+                <button class="btn-secondary" onclick="window.location.href='/export/history/pdf'">
+                    ⬇ PDF
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- DANGER ZONE -->
+<div class="card reveal">
+    <div class="card-header">Danger Zone</div>
+    <div class="card-body">
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Clear History</h4>
+                <p>Permanently delete all analysis records</p>
+            </div>
+            <button class="btn-danger" id="clearHistoryBtn">Clear History</button>
+        </div>
+        <div class="settings-item">
+            <div class="settings-label">
+                <h4>Logout</h4>
+                <p>End current session</p>
+            </div>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</div>
+
+</div>
+</main>
+</div>
+<!-- =========================
+   CONFIRM CLEAR MODAL
+========================= -->
+<div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Confirm Action</h3>
+        <p>Are you sure you want to delete all history?</p>
+
+        <div class="modal-actions">
+            <button id="cancelClearBtn" class="btn-secondary">
+                Cancel
+            </button>
+            <button id="confirmClearBtn" class="btn-danger">
+                Yes, Clear
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/settings.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Email · Email Forensics</title>
+
+    <!-- Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+</head>
+
+<body class="dashboard-page page-analyze">
+
+<div class="dashboard-wrapper">
+
+<!-- ============== SIDEBAR ============== -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <h2>Email Forensics</h2>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="/dashboard" class="nav-item active">🔍 Analyze Email</a>
+        <a href="/results" class="nav-item">📊 Analysis Results</a>
+        <a href="/geolocation" class="nav-item">🌍 IP Geolocation</a>
+        <a href="/history-page" class="nav-item">📜 History</a>
+        <a href="/settings" class="nav-item">⚙️ Settings</a>
+        <a href="/logout" class="nav-item nav-logout">🚪 Logout</a>
+    </nav>
+</aside>
+
+<!-- ============== MAIN ============== -->
+<main class="main-content">
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+    <button id="menuToggle" class="menu-btn">☰</button>
+    <div>
+        <h1 id="dashboardGreeting">Welcome</h1>
+        <p class="text-muted">Email header forensic command center</p>
+    </div>
+
+    <div class="user-info">
+        <span class="user-name">
+            {{ session.get('name') or session.get('email','').split('@')[0] or 'Analyst' }}
+        </span>
+        <div class="user-avatar">👤</div>
+    </div>
+</header>
+
+<!-- 🔐 Inject session info for JS -->
+<script>
+    window.__USER__ = {
+        name: "{{ session.get('name','') }}",
+        email: "{{ session.get('email','') }}"
+    };
+</script>
+
+<!-- ===== STATUS STRIP ===== -->
+<div class="card">
+    <div class="card-body text-center">
+        <strong>Status:</strong>
+        <span id="statusBadge" class="badge badge-info">Ready</span>
+    </div>
+</div>
+
+<!-- ===== INTELLIGENCE OVERVIEW ===== -->
+<section class="intel-strip">
+    <div class="intel-card">
+        <span>🧠</span>
+        <div>
+            <strong>Threat Intelligence</strong>
+            <small>Header anomalies & scoring</small>
+        </div>
+    </div>
+
+    <div class="intel-card">
+        <span>🔐</span>
+        <div>
+            <strong>Auth Verification</strong>
+            <small>SPF · DKIM · DMARC</small>
+        </div>
+    </div>
+
+    <div class="intel-card">
+        <span>🌍</span>
+        <div>
+            <strong>Route Forensics</strong>
+            <small>Multi-hop IP tracing</small>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COMMAND CENTER ===== -->
+<div class="command-grid">
+
+    <!-- INPUT PANEL -->
+    <section class="card command-input">
+        <div class="card-header">Email Header Command Console</div>
+        <div class="card-body">
+            <textarea
+                id="emailHeader"
+                class="email-input"
+                placeholder="Paste full email headers here..."
+            ></textarea>
+
+            <div class="button-group">
+                <button class="btn-primary" id="analyzeBtn">
+                    Run Forensic Analysis
+                </button>
+                <button class="btn-secondary" id="clearBtn">Clear</button>
+                <button class="btn-secondary" id="sampleBtn">Sample</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREVIEW PANEL -->
+        <aside class="card command-preview collapsed">
+            <div class="card-header preview-toggle">
+                Analysis Scope ▼
+            </div>
+        <div class="card-body preview-list">
+            <p>✔ Sender & receiver routing chain</p>
+            <p>✔ Authentication failures</p>
+            <p>✔ Header spoofing indicators</p>
+            <p>✔ IP hop geolocation</p>
+            <p>✔ Risk score & final verdict</p>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ===== POST ANALYSIS INTENT ===== -->
+<section class="card intent-card">
+    <div class="card-header">Post-Analysis Intelligence</div>
+    <div class="card-body summary-widgets">
+
+        <div class="widget-card muted">
+            <h4>Risk Score</h4>
+            <div id="riskScore" class="widget-value">
+                Generated after analysis
+            </div>
+        </div>
+
+        <div class="widget-card muted">
+            <h4>Verdict</h4>
+            <div id="verdict" class="widget-value">
+                Threat classification
+            </div>
+        </div>
+
+        <div class="widget-card muted">
+            <h4>IP Hops</h4>
+            <div id="hops" class="widget-value">
+                Routing depth
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+</div>
+
+
+<!-- ===== SCRIPTS ===== -->
+<script src="{{ url_for('static', filename='assets/data/email_samples.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* =========================================================
+   HISTORY PAGE – UI ENHANCEMENTS ONLY
+   (Scoped | Non-breaking | Safe)
+========================================================= */
+
+/* =========================================================
+   STAT CARDS – ICON ABOVE NUMBER
+========================================================= */
+
+.history-stats .stat-box{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:120px;
+}
+
+.history-stats .stat-box::before{
+  font-size:22px;
+  margin-bottom:6px;
+  opacity:.85;
+}
+
+/* Icons */
+.history-stats .stat-box:nth-child(1)::before{ content:"📊"; }
+.history-stats .stat-box.success::before{ content:"✅"; }
+.history-stats .stat-box.warning::before{ content:"⚠️"; }
+.history-stats .stat-box.danger::before{ content:"🚨"; }
+
+/* Center numbers properly */
+.history-stats .stat-box strong{
+  font-size:30px;
+  line-height:1.1;
+}
+
+/* =========================================================
+   STAT CARD HOVER (SUBTLE & PREMIUM)
+========================================================= */
+
+.history-stats .stat-box{
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.history-stats .stat-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 34px rgba(0,0,0,.08);
+}
+
+/* =========================================================
+   THREAT CARD – GRADIENT EMPHASIS
+========================================================= */
+
+.history-stats .stat-box.danger{
+  background:linear-gradient(135deg,#fee2e2,#fff);
+  border:1px solid #fecaca;
+}
+
+.history-stats .stat-box.danger strong{
+  color:#b91c1c;
+}
+
+/* =========================================================
+   PAGINATION – POLISHED ENTERPRISE STYLE
+========================================================= */
+
+.history-pagination{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:32px;
+}
+
+.history-pagination button{
+  padding:10px 22px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid #e5e7eb;
+  background:white;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.history-pagination button:hover:not(:disabled){
+  background:#eef2ff;
+}
+
+.history-pagination button:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+/* =========================================================
+   FINAL OVERRIDE – REMOVE SHINE, KEEP CLEAN HOVER
+   Applies ONLY to Launch Analysis Dashboard button
+========================================================= */
+
+/* Kill shine animation completely */
+.btn-primary::after {
+    content: none !important;
+}
+
+/* Clean, professional hover effect */
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+}
+
+/* Ensure smooth interaction */
+.btn-primary {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

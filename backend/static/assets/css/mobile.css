@@ -1,0 +1,1261 @@
+/* =========================================
+   MOBILE ONLY (UX OPTIMIZED + SAFE)
+========================================= */
+
+/* Hide ONLY on desktop */
+@media (min-width: 769px) {
+    .menu-btn {
+        display: none;
+    }
+}
+
+/* Show ONLY on mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        font-size: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+@media (max-width: 768px) {
+
+    .dashboard-wrapper {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        width: 240px;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+}
+/* =========================================
+   PREVIEW DROPDOWN FIX (FINAL)
+========================================= */
+
+/* Default = hidden */
+.command-preview .preview-list {
+    display: none;
+}
+
+/* When OPEN → show */
+.command-preview:not(.collapsed) .preview-list {
+    display: block;
+}
+
+/* Make header clickable */
+.preview-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Add small animation feel */
+.preview-list {
+    transition: all 0.2s ease;
+}
+/* =========================================
+   GLOBAL MOBILE NAV FIX (CRITICAL)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* FORCE sidebar hidden initially */
+    /* FIXED – NO !important */
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        width: 240px;
+        height: 100%;
+        background: #0b1a2b;
+        transition: 0.3s;
+        z-index: 1000;
+        display: block;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+}
+
+/* =========================================
+   DASHBOARD (PRO UI – MATCH RESULTS STYLE)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+    .page-analyze .page-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .page-analyze .page-header h1 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .page-analyze .page-header p {
+        display: none;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    /* ---------- REMOVE HEAVY CARD STYLE ---------- */
+    .page-analyze .card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    /* ---------- STATUS ---------- */
+    .page-analyze .status-badge {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    /* ---------- INTEL STRIP (FLAT ROW STYLE) ---------- */
+    .page-analyze .intel-strip {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .page-analyze .intel-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .page-analyze .intel-card:last-child {
+        border-bottom: none;
+    }
+
+    .page-analyze .intel-card small {
+        display: none;
+    }
+
+    .page-analyze .intel-card strong {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    /* ---------- COMMAND SECTION (MAIN FOCUS) ---------- */
+    .page-analyze .command-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .page-analyze .email-input {
+        width: 100%;
+        min-height: 150px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    /* ---------- BUTTONS (CLEAN STYLE) ---------- */
+    .page-analyze .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .page-analyze .button-group button {
+        width: 100%;
+        padding: 11px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* ---------- PREVIEW (MINIMAL) ---------- */
+    .page-analyze .command-preview {
+        margin-top: 10px;
+    }
+
+    .page-analyze .preview-list {
+        display: none; /* hide by default */
+    }
+
+    .page-analyze .preview-toggle {
+        font-size: 13px;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    /* ---------- SUMMARY (LIGHT SECTION) ---------- */
+    .page-analyze .summary-widgets {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .page-analyze .widget-card {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .page-analyze .widget-card h4 {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .page-analyze .widget-value {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+}
+
+/* =========================================
+   RESULTS PAGE (PRO UI – CLEAN + LIGHT)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+    .page-results .page-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .page-results .page-header h1 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .page-results .subtitle {
+        display: none;
+    }
+
+    /* ---------- REMOVE ALL HEAVY CARD FEEL ---------- */
+    .page-results .card,
+    .page-results .score-card,
+    .page-results .verdict-card {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    /* ---------- TOP SECTION (MERGED LOOK) ---------- */
+    .page-results .results-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    /* SCORE */
+    .page-results .score-card svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .page-results .score-center div {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .page-results .score-center small {
+        font-size: 11px;
+        opacity: 0.7;
+    }
+
+    /* VERDICT */
+    .page-results .verdict-card {
+        text-align: center;
+    }
+
+    .page-results .verdict-card h2 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 4px 0;
+    }
+
+    .page-results .verdict-card p {
+        display: none;
+    }
+
+    .page-results .auth-row {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .page-results .auth-chip {
+        font-size: 10px;
+        padding: 3px 7px;
+        border-radius: 20px;
+        background: #eef2f7;
+    }
+
+    /* ---------- SECTION STYLE (NOT CARDS) ---------- */
+    .page-results .card {
+        margin-top: 16px;
+        padding-top: 10px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .page-results .card-header {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    /* ---------- RISK BREAKDOWN ---------- */
+    .page-results .risk-bars {
+        font-size: 12px;
+        padding-left: 4px;
+    }
+
+    /* ---------- HEADER INFO ---------- */
+    .page-results .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .page-results .info-grid label {
+        display: none;
+    }
+
+    .page-results .info-grid span {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    /* ---------- ACTION BUTTONS ---------- */
+    .page-results .action-buttons {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .page-results .action-buttons a {
+        background: linear-gradient(90deg, #3b82f6, #38bdf8);
+        color: white;
+        font-size: 13px;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .page-results .action-buttons button {
+        font-size: 13px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #f3f4f6;
+    }
+
+    /* ---------- EXPORT MODAL ---------- */
+    .page-results .export-modal {
+        width: 90%;
+        padding: 14px;
+    }
+
+}
+/* =========================================
+   GEOLOCATION (PROFESSIONAL MOBILE UI v2)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .page-geolocation .page-header h1 {
+        font-size: 16px;
+        text-align: center;
+        flex: 1;
+    }
+
+    .page-geolocation .subtitle {
+        display: none;
+    }
+  /* MAP FINAL FIX */
+    .page-geolocation #geoMap {
+        width: 100%;
+        height: 220px !important;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        background: #f8fafc;
+        overflow: hidden;
+    }
+        /* REPLAY BUTTON */
+    #replayRoute {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* SECTION HEADERS */
+    .page-geolocation .card-header {
+        font-size: 14px;
+        font-weight: 600;
+        padding-bottom: 6px;
+    }
+
+    /* ================================
+       TABLE → CLEAN COMPACT CARDS
+    ================================ */
+
+    .page-geolocation .geo-table thead {
+        display: none;
+    }
+
+    .page-geolocation .geo-table tr {
+        display: block;
+        padding: 10px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+        background: #f8fafc;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .page-geolocation .geo-table td {
+        display: inline-block;
+        font-size: 12px;
+        margin: 2px 6px 2px 0;
+    }
+
+    /* Hop Title */
+    .page-geolocation .geo-table td:first-child {
+        display: block;
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    /* IP → highlight */
+    .page-geolocation .geo-table td:nth-child(2) {
+        font-weight: 500;
+        color: #2563eb;
+    }
+
+    /* Combine location into one line feel */
+    .page-geolocation .geo-table td:nth-child(3),
+    .page-geolocation .geo-table td:nth-child(4) {
+        color: #555;
+    }
+
+    /* Organization */
+    .page-geolocation .geo-table td:nth-child(5) {
+        display: block;
+        font-size: 11px;
+        color: #777;
+        margin-top: 4px;
+    }
+
+    /* Hide timestamp (clutter) */
+    .page-geolocation .geo-table td:nth-child(6) {
+        display: none;
+    }
+
+    /* BUTTON */
+    .page-geolocation .action-buttons a {
+        width: 100%;
+        display: block;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+}
+/* =========================================
+   GEO MAP FINAL FIX (DESKTOP SAFE + MOBILE PERFECT)
+========================================= */
+
+/* DESKTOP — DO NOTHING */
+.page-geolocation #geoMap {
+    width: 100%;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+    .page-geolocation #geoMap {
+        width: 100%;
+        height: 260px !important;   /* bigger */
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        background: #f8fafc;
+        overflow: hidden;
+    }
+
+    .page-geolocation #geoMap svg {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+}
+
+/* =========================================
+   HISTORY PAGE — ULTRA CLEAN FINAL UI
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+    .page-history .page-header h1 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .page-history .user-info {
+        display: none;
+    }
+
+    /* ---------- FILTERS (LIGHT + FLAT) ---------- */
+    .page-history .history-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .page-history .history-filters input,
+    .page-history .custom-dropdown,
+    .page-history #applyFilters {
+        width: 100%;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: none;
+    }
+
+    /* Dropdown */
+    .page-history .dropdown-options {
+        border-radius: 10px;
+        font-size: 13px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- STATS (MINIMAL STRIP) ---------- */
+    .page-history .history-stats {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .page-history .stat-box {
+        flex: 1;
+        padding: 8px 4px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .page-history .stat-box span {
+        font-size: 10px;
+        opacity: 0.6;
+    }
+
+    .page-history .stat-box strong {
+        font-size: 14px;
+    }
+
+    /* ---------- REMOVE TABLE HEADER ---------- */
+    .page-history .history-table thead {
+        display: none;
+    }
+
+    /* ---------- LIST STYLE (NOT CARDS) ---------- */
+    .page-history .history-table tr {
+        display: block;
+        padding: 10px 6px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid #f1f3f5;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .page-history .history-table td {
+        display: block;
+        padding: 0;
+    }
+
+    /* Sender */
+    .page-history .history-table td:nth-child(2) {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* Subject */
+    .page-history .history-table td:nth-child(3) {
+        font-size: 12px;
+        opacity: 0.6;
+        margin-bottom: 6px;
+    }
+
+    /* Hide date */
+    .page-history .history-table td:nth-child(1) {
+        display: none;
+    }
+
+    /* ---------- INLINE META ---------- */
+    .page-history .history-table td:nth-child(4),
+    .page-history .history-table td:nth-child(5),
+    .page-history .history-table td:nth-child(6) {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Score */
+    .page-history .history-table td:nth-child(4) {
+        font-size: 11px;
+        background: #eef2ff;
+        padding: 3px 8px;
+        border-radius: 20px;
+        margin-right: 6px;
+    }
+
+    /* Verdict */
+    .page-history .history-table td:nth-child(5) {
+        font-size: 11px;
+        background: #e6f4ea;
+        padding: 3px 8px;
+        border-radius: 20px;
+        margin-right: auto;
+        font-weight: 600;
+    }
+
+    /* Actions */
+    .page-history .history-table td:nth-child(6) {
+        margin-left: auto;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    /* Remove inner ugly blocks */
+    .page-history .history-table td * {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* ---------- CARD CLEAN ---------- */
+    .page-history .card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .page-history .card-header {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    /* ---------- PAGINATION ---------- */
+    .page-history .history-pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 14px;
+    }
+
+    .page-history .history-pagination button {
+        width: 48%;
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    /* ---------- FILTER CONTAINER (GROUPED) ---------- */
+    .page-history .history-filters {
+        background: #ffffff;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    /* Inputs */
+    .page-history .history-filters input {
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        border: 1px solid #eef1f4;
+    }
+
+    /* Dropdowns */
+    .page-history .custom-dropdown {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #eef1f4;
+        font-size: 13px;
+        background: #f9fafb;
+    }
+
+    /* Apply Button (tight + premium) */
+    .page-history #applyFilters {
+        margin-top: 4px;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* ---------- STATS STRIP (INLINE CLEAN) ---------- */
+    .page-history .history-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .page-history .stat-box {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 10px 6px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .page-history .stat-box span {
+        font-size: 10px;
+        opacity: 0.6;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .page-history .stat-box strong {
+        font-size: 16px;
+        display: block;
+        margin-top: 2px;
+    }
+
+    /* Optional subtle highlight */
+    .page-history .stat-box.danger {
+        border: 1px solid rgba(255,0,0,0.15);
+    }
+
+}
+
+/* =========================================
+   SETTINGS PAGE — FINAL CLEAN PRO UI
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+    .page-settings .page-header h1 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .page-settings .user-info {
+        display: none;
+    }
+
+    /* ---------- GLOBAL SPACING ---------- */
+    .page-settings .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* ---------- CARD (FLAT DESIGN) ---------- */
+    .page-settings .card {
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        overflow: hidden;
+    }
+
+    .page-settings .card-header {
+        font-size: 13px;
+        padding: 10px 12px;
+        background: #f8fafc;
+        border-bottom: 1px solid #eef1f4;
+    }
+
+    .page-settings .card-body {
+        padding: 10px 12px;
+    }
+
+    /* ---------- SETTINGS ITEMS (KEY FIX) ---------- */
+    .page-settings .settings-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #f1f3f5;
+        gap: 10px;
+    }
+
+    .page-settings .settings-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Labels */
+    .page-settings .settings-label h4 {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .page-settings .settings-label p {
+        font-size: 11px;
+        opacity: 0.6;
+    }
+
+    /* ---------- THEME BUTTONS ---------- */
+    .page-settings .theme-toggle {
+        display: flex;
+        gap: 6px;
+    }
+
+    .page-settings .theme-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 20px;
+    }
+
+    /* ---------- ACCOUNT GRID → STACK ---------- */
+    .page-settings .account-info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .page-settings .info-item {
+        background: #f9fafb;
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .page-settings .info-item label {
+        font-size: 10px;
+        opacity: 0.6;
+    }
+
+    .page-settings .info-item p {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    /* ---------- EXPORT BUTTONS ---------- */
+    .page-settings .settings-item div button {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    /* ---------- TOGGLE SWITCH ALIGN ---------- */
+    .page-settings .toggle-switch {
+        transform: scale(0.9);
+    }
+
+    /* ---------- DANGER ZONE ---------- */
+    .page-settings .btn-danger {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .page-settings .logout-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+}
+/* =========================================
+   SETTINGS BUTTON ALIGNMENT — FINAL POLISH
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- EXPORT BUTTON GROUP ---------- */
+    .page-settings .settings-item div {
+        display: flex;
+        gap: 6px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .page-settings .settings-item div button {
+        min-width: 60px;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    /* ---------- DANGER ZONE (STRONG ALIGNMENT) ---------- */
+    .page-settings .btn-danger {
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+    }
+
+    /* Make it feel like a warning action */
+    .page-settings .settings-item:has(.btn-danger) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-settings .settings-item:has(.btn-danger) .settings-label {
+        margin-bottom: 6px;
+    }
+
+    /* ---------- LOGOUT BUTTON (PRIMARY STYLE) ---------- */
+    .page-settings .logout-btn {
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+    }
+
+    .page-settings .settings-item:has(.logout-btn) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-settings .settings-item:has(.logout-btn) .settings-label {
+        margin-bottom: 6px;
+    }
+
+    /* ---------- TOGGLE ALIGN FIX ---------- */
+    .page-settings .toggle-switch {
+        margin-left: auto;
+    }
+
+}
+/* =========================================
+   SETTINGS LABEL STACK FIX (CLEAN UI)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Stack label + description */
+    .page-settings .settings-label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .page-settings .settings-label h4 {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .page-settings .settings-label p {
+        font-size: 11px;
+        opacity: 0.6;
+        line-height: 1.3;
+        margin: 0;
+    }
+
+    /* Ensure full width so text doesn't squeeze */
+    .page-settings .settings-item {
+        align-items: flex-start;
+    }
+
+}
+/* =========================================
+   LANDING PAGE — PREMIUM MOBILE UI
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- PAGE BACKGROUND ---------- */
+    body.landing-page {
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    }
+
+    /* ---------- HEADER (FLOATING CARD) ---------- */
+    .landing-header {
+        padding: 12px;
+    }
+
+    .header-flex {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 10px 14px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .logo-text {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* Hide extra nav */
+    .nav-links a:not(.btn-login) {
+        display: none;
+    }
+
+    .btn-login {
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        padding: 40px 18px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        opacity: 0.7;
+        margin-bottom: 18px;
+    }
+
+    /* CTA BUTTON (IMPORTANT DEPTH) */
+    .hero-actions .btn-login {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+        border-radius: 12px;
+
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        box-shadow: 0 6px 16px rgba(59,130,246,0.3);
+    }
+
+    .hero-note {
+        font-size: 11px;
+        opacity: 0.5;
+        margin-top: 8px;
+    }
+
+    /* ---------- PLATFORM SECTION ---------- */
+    .platform-section {
+        padding: 20px 16px;
+    }
+
+    .platform-text h2 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .platform-text p {
+        font-size: 12px;
+        opacity: 0.7;
+    }
+
+    /* GRID CARDS */
+    .platform-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 14px;
+    }
+
+    .stat-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 14px;
+        text-align: center;
+
+        box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease;
+    }
+
+    .stat-card:active {
+        transform: scale(0.97);
+    }
+
+    .stat-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: #2563eb;
+    }
+
+    .stat-label {
+        font-size: 11px;
+        opacity: 0.6;
+    }
+
+    /* ---------- WORKFLOW (KEEP BUT CLEAN) ---------- */
+    .workflow-section {
+        padding: 20px 16px;
+    }
+
+    .platform-card {
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 10px;
+
+        background: #ffffff;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+
+    .platform-card h4 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .platform-card li {
+        font-size: 12px;
+        opacity: 0.7;
+    }
+
+    /* ---------- CTA (STRONG SECTION) ---------- */
+    .cta-section {
+        margin-top: 20px;
+        padding: 28px 16px;
+
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+        text-align: center;
+    }
+
+    .cta-section h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .cta-section .btn-primary {
+        margin-top: 10px;
+        width: 100%;
+        padding: 14px;
+        border-radius: 12px;
+
+        background: linear-gradient(135deg, #60a5fa, #38bdf8);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    /* ---------- FOOTER ---------- */
+    .landing-footer {
+        padding: 20px 12px;
+        font-size: 11px;
+        text-align: center;
+        opacity: 0.6;
+    }
+
+}
+/* =========================================
+   LANDING — VISUAL UPGRADE (STUNNING MODE)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HERO GLOW ---------- */
+    .hero {
+        position: relative;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+        filter: blur(40px);
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ---------- HERO TEXT IMPACT ---------- */
+    .hero h1 {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+
+    /* ---------- BUTTON INTERACTION ---------- */
+    .btn-login,
+    .btn-primary {
+        transition: all 0.25s ease;
+    }
+
+    .btn-login:active,
+    .btn-primary:active {
+        transform: scale(0.96);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ---------- CARD DEPTH ---------- */
+    .stat-card,
+    .platform-card,
+    .value-card {
+        transition: all 0.25s ease;
+    }
+
+    .stat-card:active,
+    .platform-card:active,
+    .value-card:active {
+        transform: translateY(3px) scale(0.98);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- SECTION SPACING (IMPORTANT) ---------- */
+    section {
+        margin-bottom: 10px;
+    }
+
+    /* ---------- HEADINGS STYLE ---------- */
+    .section-title,
+    .platform-text h2 {
+        font-weight: 700;
+        letter-spacing: -0.3px;
+    }
+
+    /* ---------- CTA GLOW ---------- */
+    .cta-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-section::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+        top: -50px;
+        right: -50px;
+        filter: blur(30px);
+    }
+
+}

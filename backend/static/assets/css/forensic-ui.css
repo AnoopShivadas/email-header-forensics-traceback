@@ -1,0 +1,478 @@
+/* =========================================================
+   FORENSIC UI – PROFESSIONAL RESULTS & EXPLANATION LAYER
+   Safe to load AFTER main.css
+========================================================= */
+
+
+/* =========================================================
+   RESULTS – FORENSIC DASHBOARD STYLE
+========================================================= */
+
+.results-top{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:28px;
+  margin-bottom:32px;
+}
+
+/* ===== SCORE CARD ===== */
+.score-card{
+  position:relative;
+  background:#ffffff;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 12px 32px rgba(15,23,42,.12);
+}
+
+.score-card svg{
+  width:100%;
+  display:block;
+}
+
+.score-card .bg{
+  fill:none;
+  stroke:#e5e7eb;
+  stroke-width:14;
+}
+
+.score-card .progress{
+  fill:none;
+  stroke:#f59e0b;
+  stroke-width:14;
+  stroke-linecap:round;
+  stroke-dasharray:502;
+  stroke-dashoffset:502;
+  transform:rotate(-90deg);
+  transform-origin:50% 50%;
+}
+
+/* Center score */
+.score-center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+}
+
+.score-center div{
+  font-size:44px;
+  font-weight:800;
+  color:#0f172a;
+}
+
+.score-center small{
+  font-size:13px;
+  color:#64748b;
+}
+
+
+/* ===== VERDICT CARD ===== */
+.verdict-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:26px;
+  box-shadow:0 12px 32px rgba(15,23,42,.12);
+}
+
+.verdict-card h2{
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.verdict-card p{
+  font-size:14px;
+  color:#475569;
+}
+
+
+/* ===== AUTH INDICATORS ===== */
+.auth-row{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.auth-chip{
+  padding:8px 16px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px;
+  background:#e5e7eb;
+}
+
+.auth-chip.pass{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.auth-chip.fail{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+
+/* =========================================================
+   RISK FACTOR BARS
+========================================================= */
+
+.risk-bars{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.risk-bars li{
+  display:grid;
+  grid-template-columns:1.6fr 3fr 60px;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.risk-bars span{
+  font-size:14px;
+  font-weight:600;
+  color:#0f172a;
+}
+
+.risk-bars .bar{
+  height:8px;
+  border-radius:6px;
+  background:#e5e7eb;
+  overflow:hidden;
+}
+
+.risk-bars .fill{
+  height:100%;
+  width:0;
+  border-radius:6px;
+  transition:width .7s ease;
+}
+
+.risk-bars li small{
+  text-align:right;
+  font-size:13px;
+  font-weight:700;
+  color:#374151;
+}
+
+
+/* =========================================================
+   HEADER / METADATA GRID
+========================================================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.info-grid label{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:#64748b;
+}
+
+.info-grid p{
+  font-size:14px;
+  font-weight:600;
+  color:#0f172a;
+  word-break:break-word;
+}
+
+
+/* =========================================================
+   FORENSIC "HOW IT WORKS" – PRODUCT GRADE
+========================================================= */
+
+.forensic-how{
+  background:linear-gradient(180deg,#f8fafc,#eef2ff);
+  padding:120px 0;
+}
+
+.section-subtitle{
+  max-width:820px;
+  margin:18px auto 80px;
+  text-align:center;
+  font-size:18px;
+  color:#475569;
+}
+
+
+/* ===== PLATFORM EXTRACTION CARDS ===== */
+.platform-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+  margin-bottom:120px;
+}
+
+.platform-card{
+  background:#ffffff;
+  border-radius:22px;
+  padding:34px 30px;
+  box-shadow:0 18px 44px rgba(15,23,42,.12);
+  transition:.35s ease;
+}
+
+.platform-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 28px 60px rgba(15,23,42,.18);
+}
+
+.platform-icon{
+  font-size:36px;
+  margin-bottom:14px;
+}
+
+.platform-card h4{
+  font-size:18px;
+  font-weight:900;
+  margin-bottom:16px;
+  color:#0f172a;
+}
+
+.platform-card ul{
+  padding-left:18px;
+  font-size:14px;
+  color:#475569;
+  line-height:1.8;
+}
+
+.platform-card li{
+  margin-bottom:6px;
+}
+
+
+/* =========================================================
+   FORENSIC VALUE – WHAT WE ANALYZE
+========================================================= */
+
+.forensic-value{
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.forensic-value h3{
+  font-size:34px;
+  font-weight:900;
+  margin-bottom:60px;
+}
+
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:32px;
+}
+
+.value-card{
+  background:rgba(255,255,255,.85);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 14px 36px rgba(15,23,42,.12);
+}
+
+.value-card h5{
+  font-size:16px;
+  font-weight:900;
+  margin-bottom:10px;
+  color:#0f172a;
+}
+
+.value-card p{
+  font-size:14px;
+  color:#475569;
+  line-height:1.7;
+}
+/* =========================================================
+   CREATIVE LANDING UPGRADE – CYBER FORENSICS STYLE
+   Zero HTML changes required
+========================================================= */
+
+/* ---------- GLOBAL SECTION TONE ---------- */
+.forensic-how,
+.what-analyzes {
+  position: relative;
+  background:
+    radial-gradient(circle at top, #e0e7ff, transparent 55%),
+    linear-gradient(180deg, #f8fafc, #eef2ff);
+}
+
+/* Headings stronger */
+.forensic-how h2,
+.what-analyzes h2 {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+/* Subtitle more presence */
+.section-subtitle {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 820px;
+}
+
+/* =========================================================
+   HOW TO EXTRACT – PLATFORM CARDS (CREATIVE)
+========================================================= */
+
+.platform-steps {
+  gap: 46px;
+}
+
+/* Card redesign */
+.platform-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 26px;
+  padding: 38px 34px;
+  box-shadow:
+    0 20px 45px rgba(15,23,42,.12),
+    inset 0 1px 0 rgba(255,255,255,.6);
+  transition: all .45s cubic-bezier(.22,.61,.36,1);
+  overflow: hidden;
+}
+
+/* Left accent bar */
+.platform-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  width: 6px;
+  height: 64%;
+  background: linear-gradient(180deg,#2563eb,#38bdf8);
+  border-radius: 6px;
+  opacity: .9;
+}
+
+/* Floating glow on hover */
+.platform-card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, #60a5fa33, transparent 60%);
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 40px 90px rgba(15,23,42,.2);
+}
+
+.platform-card:hover::after {
+  opacity: 1;
+}
+
+/* Icon emphasis */
+.platform-icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 14px rgba(96,165,250,.35));
+}
+
+/* Headings */
+.platform-card h4 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+/* Steps styling */
+.platform-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.platform-card li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  font-size: 14.5px;
+}
+
+.platform-card li::before {
+  content: "➜";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 900;
+}
+
+/* =========================================================
+   WHAT THE PLATFORM ANALYZES – INTELLIGENCE CARDS
+========================================================= */
+
+.value-grid {
+  gap: 40px;
+}
+
+/* Intelligence card redesign */
+.value-card {
+  position: relative;
+  background:
+    linear-gradient(180deg,#ffffff,#f8fafc);
+  border-radius: 26px;
+  padding: 36px;
+  box-shadow:
+    0 22px 50px rgba(15,23,42,.14);
+  transition: all .45s ease;
+}
+
+/* Top indicator */
+.value-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 5px;
+  background: linear-gradient(90deg,#2563eb,#38bdf8);
+  border-radius: 0 0 12px 12px;
+}
+
+/* Hover intelligence glow */
+.value-card:hover {
+  transform: translateY(-14px);
+  box-shadow:
+    0 40px 90px rgba(15,23,42,.25);
+}
+
+/* Title */
+.value-card h5 {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+/* Text */
+.value-card p {
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   RESPONSIVE BALANCE
+========================================================= */
+
+@media (max-width: 900px) {
+  .forensic-how h2,
+  .what-analyzes h2 {
+    font-size: 34px;
+  }
+
+  .platform-card,
+  .value-card {
+    padding: 28px;
+  }
+}

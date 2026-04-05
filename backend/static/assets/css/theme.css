@@ -1,0 +1,333 @@
+/* ==================================================
+   GLOBAL DARK THEME BASE (DASHBOARD ONLY)
+================================================== */
+
+.dark-theme.dashboard-page {
+  background-color: #0b1220;
+  color: #e5e7eb;
+}
+
+.dark-theme.dashboard-page .dashboard-wrapper,
+.dark-theme.dashboard-page .main-content {
+  background-color: #0b1220;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.dark-theme.dashboard-page .sidebar {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-right: 1px solid #1f2937;
+}
+
+.dark-theme.dashboard-page .sidebar-header h2 {
+  color: #f8fafc;
+}
+
+.dark-theme.dashboard-page .nav-item {
+  color: #c7d2fe;
+}
+
+.dark-theme.dashboard-page .nav-item:hover,
+.dark-theme.dashboard-page .nav-item.active {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+/* ==================================================
+   HEADERS & TEXT
+================================================== */
+
+.dark-theme.dashboard-page h1,
+.dark-theme.dashboard-page h2,
+.dark-theme.dashboard-page h3,
+.dark-theme.dashboard-page h4 {
+  color: #f8fafc;
+}
+
+.dark-theme.dashboard-page .text-muted,
+.dark-theme.dashboard-page .subtitle {
+  color: #94a3b8;
+}
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.dark-theme.dashboard-page .card {
+  background-color: #0f172a;
+  border: 1px solid #1f2937;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.dark-theme.dashboard-page .card-header {
+  color: #e5e7eb;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* ==================================================
+   INPUTS / TEXTAREA / SELECT
+================================================== */
+
+.dark-theme.dashboard-page input,
+.dark-theme.dashboard-page textarea,
+.dark-theme.dashboard-page select {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+
+.dark-theme.dashboard-page input::placeholder,
+.dark-theme.dashboard-page textarea::placeholder {
+  color: #64748b;
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.dark-theme.dashboard-page .btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+}
+
+.dark-theme.dashboard-page .btn-secondary {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+}
+
+.dark-theme.dashboard-page .btn-danger {
+  background-color: #b91c1c;
+  color: #ffffff;
+}
+
+/* ==================================================
+   BADGES
+================================================== */
+
+.dark-theme.dashboard-page .badge-success {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.dark-theme.dashboard-page .badge-warning {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.dark-theme.dashboard-page .badge-danger {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* ==================================================
+   PAGE-SPECIFIC FIXES
+================================================== */
+
+/* ---------- ANALYZE PAGE ---------- */
+.dark-theme.dashboard-page.page-analyze .widget-card {
+  background-color: #020617;
+  border: 1px solid #1f2937;
+}
+
+/* ---------- RESULTS PAGE ---------- */
+.dark-theme.dashboard-page.page-results .score-card,
+.dark-theme.dashboard-page.page-results .verdict-card {
+  background-color: #020617;
+}
+
+.dark-theme.dashboard-page.page-results .auth-chip {
+  background-color: #1e293b;
+  color: #c7d2fe;
+}
+
+/* ---------- HISTORY PAGE ---------- */
+.dark-theme.dashboard-page.page-history .stat-box {
+  background-color: #020617;
+  border: 1px solid #1f2937;
+}
+
+.dark-theme.dashboard-page.page-history table,
+.dark-theme.dashboard-page.page-history th,
+.dark-theme.dashboard-page.page-history td {
+  color: #e5e7eb;
+}
+
+.dark-theme.dashboard-page.page-history thead th {
+  color: #c7d2fe;
+}
+
+.dark-theme.dashboard-page.page-history tbody tr {
+  background-color: #020617;
+}
+
+.dark-theme.dashboard-page.page-history tbody tr:hover {
+  background-color: #1e293b;
+}
+
+.dark-theme.dashboard-page.page-history .stat-box.success {
+  color: #22c55e;
+}
+
+.dark-theme.dashboard-page.page-history .stat-box.warning {
+  color: #f59e0b;
+}
+
+.dark-theme.dashboard-page.page-history .stat-box.danger {
+  color: #ef4444;
+}
+
+/* ---------- GEOLOCATION PAGE ---------- */
+.dark-theme.dashboard-page.page-geolocation table {
+  background-color: #020617;
+}
+
+.dark-theme.dashboard-page.page-geolocation th {
+  color: #c7d2fe;
+  background-color: #0f172a;
+}
+
+.dark-theme.dashboard-page.page-geolocation td {
+  color: #e5e7eb;
+}
+
+.dark-theme.dashboard-page.page-geolocation .geo-table tbody tr {
+  background-color: #020617;
+}
+
+.dark-theme.dashboard-page.page-geolocation .geo-table tbody tr:hover {
+  background-color: #1e293b;
+}
+
+.dark-theme.dashboard-page.page-geolocation #replayRoute {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+}
+
+/* ---------- SETTINGS PAGE ---------- */
+.dark-theme.dashboard-page.page-settings .settings-item p {
+  color: #94a3b8;
+}
+
+.dark-theme.dashboard-page.page-settings .theme-btn {
+  background-color: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark-theme.dashboard-page.page-settings .theme-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+/* ==================================================
+   SETTINGS PAGE – FINAL CONTRAST FIX
+================================================== */
+
+/* Info item container */
+.dark-theme.dashboard-page.page-settings .info-item {
+  background-color: #020617;
+  border: 1px solid #1f2937;
+}
+
+/* Label text (muted, readable) */
+.dark-theme.dashboard-page.page-settings .info-item label {
+  color: #94a3b8;
+}
+
+/* Value text (strong contrast) */
+.dark-theme.dashboard-page.page-settings .info-item p {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+/* Account status highlight */
+.dark-theme.dashboard-page.page-settings .info-item p[style*="color:#22c55e"] {
+  color: #22c55e !important;
+}
+
+/* Card background consistency */
+.dark-theme.dashboard-page.page-settings .card {
+  background-color: #0f172a;
+}
+/* ==================================================
+   HISTORY PAGE – FINAL CONTRAST & FADE FIX
+================================================== */
+
+/* History stat cards */
+.dark-theme.dashboard-page.page-history .stat-box {
+  background-color: #020617;
+  border: 1px solid #1f2937;
+}
+
+/* Stat labels */
+.dark-theme.dashboard-page.page-history .stat-box span {
+  color: #94a3b8;
+}
+
+/* Stat values */
+.dark-theme.dashboard-page.page-history .stat-box strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+/* History table container */
+.dark-theme.dashboard-page.page-history .history-table {
+  background-color: #020617;
+}
+
+/* Table headers */
+.dark-theme.dashboard-page.page-history .history-table th {
+  color: #c7d2fe;
+  background-color: #0f172a;
+}
+
+/* Table rows */
+.dark-theme.dashboard-page.page-history .history-table tbody tr {
+  background-color: #020617;
+}
+
+/* Table hover */
+.dark-theme.dashboard-page.page-history .history-table tbody tr:hover {
+  background-color: #1e293b;
+}
+
+/* Table cell text */
+.dark-theme.dashboard-page.page-history .history-table td {
+  color: #020617;
+  font-weight: 500;
+}
+
+/* Muted secondary text inside cells */
+.dark-theme.dashboard-page.page-history .history-table td span,
+.dark-theme.dashboard-page.page-history .history-table td small {
+  color: #020617;
+}
+/* ==================================================
+   GEOLOCATION PAGE – REMOVE WHITE CELLS (FINAL FIX)
+================================================== */
+
+/* Override pill-style white cells */
+.dark-theme.dashboard-page.page-geolocation .geo-table td {
+  background-color: #020617 !important;
+  color: #f8fafc !important;
+  border: 1px solid #1f2937;
+}
+
+/* Header row stays slightly lighter */
+.dark-theme.dashboard-page.page-geolocation .geo-table th {
+  background-color: #0f172a;
+  color: #c7d2fe;
+}
+
+/* Row hover for depth */
+.dark-theme.dashboard-page.page-geolocation .geo-table tbody tr:hover td {
+  background-color: #1e293b !important;
+}
+
+/* Muted placeholder values */
+.dark-theme.dashboard-page.page-geolocation .geo-table td:empty,
+.dark-theme.dashboard-page.page-geolocation .geo-table td span {
+  color: #94a3b8;
+}

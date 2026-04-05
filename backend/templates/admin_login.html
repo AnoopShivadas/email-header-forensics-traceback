@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <!-- ONLY THIS CSS -->
+    <link rel="stylesheet" href="/static/assets/css/admin_login.css">
+</head>
+
+<body class="admin-login-page">
+
+<div class="login-container">
+    <div class="login-card">
+
+        <h2>Admin Login</h2>
+        <p>Access the admin dashboard</p>
+
+        <form method="POST">
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter admin email" required>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <a href="/login" class="back-link">← Back to User Login</a>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

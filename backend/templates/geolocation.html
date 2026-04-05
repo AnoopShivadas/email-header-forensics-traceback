@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Email Route Geolocation · Email Forensics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+
+</head>
+
+<body class="dashboard-page page-geolocation">
+<div class="dashboard-wrapper">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header"><h2>Email Forensics</h2></div>
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="nav-item">🔍 Analyze Email</a>
+    <a href="/results" class="nav-item">📊 Analysis Results</a>
+    <a href="/geolocation" class="nav-item active">🌍 IP Geolocation</a>
+    <a href="/history-page" class="nav-item">📜 History</a>
+    <a href="/settings" class="nav-item">⚙️ Settings</a>
+    <a href="/logout" class="nav-item nav-logout">🚪 Logout</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main-content">
+
+<header class="page-header">
+  <button id="menuToggle" class="menu-btn">☰</button>
+  <h1>Email Route Analysis</h1>
+  <span class="subtitle">Visual trace of email delivery path</span>
+</header>
+
+<!-- MAP CARD -->
+<section class="card">
+  <div class="card-header">Global Routing Map</div>
+  <div class="card-body">
+
+    <!-- D3 DRAWS EVERYTHING HERE -->
+    <svg id="geoMap" width="100%" height="500"></svg>
+
+    <div style="margin-top:12px; text-align:right;">
+      <button id="replayRoute" class="btn-secondary">
+        🔁 Replay Route
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTING TIMELINE 
+<section class="card">
+  <div class="card-header">Routing Timeline</div>
+  <div class="card-body">
+    <ul id="routeTimeline" class="route-timeline"></ul>
+  </div>
+</section>
+-->
+<!-- GEOLOCATION TABLE -->
+<section class="card">
+  <div class="card-header">Geolocation Intelligence</div>
+  <div class="card-body">
+    <table class="geo-table">
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>IP Address</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Organization</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody id="geoTableBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="action-buttons">
+  <a href="/results" class="btn-primary">← Back to Results</a>
+</div>
+
+</main>
+</div>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+<!-- MAP LIBRARIES -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+
+<!-- MAP LOGIC -->
+<script src="{{ url_for('static', filename='assets/js/world-map.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/geo-map.js') }}"></script>
+
+</body>
+</html>

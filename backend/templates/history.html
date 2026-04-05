@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis History · Email Forensics</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/history-enhancements.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/history-polish.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+
+</head>
+
+<body class="dashboard-page page-history">
+<div class="dashboard-wrapper">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header"><h2>Email Forensics</h2></div>
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="nav-item">🔍 Analyze Email</a>
+    <a href="/results" class="nav-item">📊 Analysis Results</a>
+    <a href="/geolocation" class="nav-item">🌍 IP Geolocation</a>
+    <a href="/history-page" class="nav-item active">📜 History</a>
+    <a href="/settings" class="nav-item">⚙️ Settings</a>
+    <a href="/logout" class="nav-item nav-logout">🚪 Logout</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main-content">
+
+<header class="page-header">
+  <button id="menuToggle" class="menu-btn">☰</button>
+  <h1>Analysis History</h1>
+  <div class="user-info">
+    <span class="user-name">{{ session.get('name','Security Analyst') }}</span>
+    <div class="user-avatar">👤</div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="history-filters">
+  <input id="filter-search" placeholder="Search email records" disabled>
+
+<div class="custom-dropdown" id="riskDropdown">
+  <div class="dropdown-selected">All Risk Levels</div>
+  <div class="dropdown-options">
+    <div data-value="">All Risk Levels</div>
+    <div data-value="Safe">Safe</div>
+    <div data-value="Suspicious">Suspicious</div>
+    <div data-value="Threat">Threat</div>
+  </div>
+</div>
+
+<input type="hidden" id="filter-risk" value="">
+<div class="custom-dropdown" id="timeDropdown">
+  <div class="dropdown-selected">All Time</div>
+  <div class="dropdown-options">
+    <div data-value="">All Time</div>
+    <div data-value="7">Last 7 Days</div>
+    <div data-value="30">Last 30 Days</div>
+  </div>
+</div>
+
+<input type="hidden" id="filter-time" value="">
+  <button class="btn-secondary" id="applyFilters">Apply</button>
+</div>
+
+<!-- STATS -->
+<div class="history-stats">
+  <div class="stat-box">
+    <span>Total</span><strong id="stat-total">0</strong>
+  </div>
+  <div class="stat-box success">
+    <span>Safe</span><strong id="stat-safe">0</strong>
+  </div>
+  <div class="stat-box warning">
+    <span>Suspicious</span><strong id="stat-suspicious">0</strong>
+  </div>
+  <div class="stat-box danger">
+    <span>Threats</span><strong id="stat-threat">0</strong>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="card">
+  <div class="card-header">Recent Analyses</div>
+  <div class="card-body">
+
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Sender</th>
+          <th>Subject</th>
+          <th>Risk</th>
+          <th>Verdict</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <!-- 🔑 IMPORTANT: EMPTY BODY (JS CONTROLS EVERYTHING) -->
+      <tbody id="history-table-body"></tbody>
+
+    </table>
+
+  </div>
+</div>
+
+<!-- PAGINATION -->
+<div class="history-pagination">
+  <button class="btn-secondary" id="prevPage">Prev</button>
+  <span>Page <span id="currentPage">1</span></span>
+  <button class="btn-secondary" id="nextPage">Next</button>
+</div>
+
+</main>
+</div>
+
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/history.js') }}"></script>
+</body>
+</html>

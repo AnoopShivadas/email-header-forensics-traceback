@@ -1,0 +1,223 @@
+.results-top{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:24px;
+  margin-bottom:24px;
+}
+
+.score-card{
+  position:relative;
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.score-card svg{
+  width:100%;
+}
+
+.score-card .bg{
+  fill:none;
+  stroke:#e5e7eb;
+  stroke-width:12;
+}
+
+.score-card .progress{
+  fill:none;
+  stroke:#f59e0b;
+  stroke-width:12;
+  stroke-dasharray:502;
+  stroke-dashoffset:502;
+  transform:rotate(-90deg);
+  transform-origin:50% 50%;
+}
+
+.score-center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.score-center div{
+  font-size:48px;
+  font-weight:700;
+}
+
+.verdict-card{
+  background:#fff;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.verdict-card h2{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.auth-row{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+
+.auth-chip{
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+  background:#e5e7eb;
+}
+
+.auth-chip.pass{background:#dcfce7;color:#166534}
+.auth-chip.fail{background:#fee2e2;color:#991b1b}
+
+.risk-bars{
+  list-style:none;
+  padding:0;
+}
+
+.risk-bars li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.risk-bars .bar{
+  flex:1;
+  height:8px;
+  border-radius:6px;
+  background:#e5e7eb;
+  overflow:hidden;
+}
+
+.risk-bars .fill{
+  height:100%;
+  background:#f59e0b;
+  width:0;
+  transition:width .8s ease;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.info-grid label{
+  display:block;
+  font-size:12px;
+  color:#6b7280;
+}
+.risk-bars li{
+  display:grid;
+  grid-template-columns: 1.5fr 3fr 60px;
+  align-items:center;
+}
+
+.risk-bars li small{
+  text-align:right;
+  font-weight:600;
+  color:#374151;
+}
+/* =========================================================
+   FORENSIC HOW SECTION – INFORMATIVE & PREMIUM
+========================================================= */
+
+.forensic-how{
+  background:linear-gradient(180deg,#f8fafc,#eef2ff);
+  padding:140px 0;
+}
+
+.section-subtitle{
+  max-width:760px;
+  margin:18px auto 70px;
+  text-align:center;
+  font-size:18px;
+  color:#475569;
+}
+
+/* ================= PLATFORM STEPS ================= */
+.platform-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:36px;
+  margin-bottom:110px;
+}
+
+.platform-card{
+  background:white;
+  border-radius:24px;
+  padding:36px 30px;
+  box-shadow:0 14px 34px rgba(0,0,0,.08);
+  transition:.4s ease;
+}
+
+.platform-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.platform-icon{
+  font-size:40px;
+  margin-bottom:14px;
+}
+
+.platform-card h4{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.platform-card ul{
+  padding-left:18px;
+  color:#475569;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.platform-card li{
+  margin-bottom:6px;
+}
+
+/* ================= FORENSIC VALUE ================= */
+.forensic-value{
+  max-width:1000px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.forensic-value h3{
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:50px;
+}
+
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+
+.value-card{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+}
+
+.value-card h5{
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.value-card p{
+  font-size:14px;
+  color:#475569;
+}

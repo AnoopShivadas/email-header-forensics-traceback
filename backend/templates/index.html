@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Header Forensics & Threat Trace-back Portal</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mobile.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/forensic-ui.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/landing-fixes.css') }}">
+
+
+</head>
+
+<body class="landing-page">
+
+  <!-- HEADER -->
+  <header class="landing-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <span class="logo-mark">🛡️</span>
+        <span class="logo-text">Email Forensics Portal</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#features">About</a>
+        <a href="/login" class="btn-login">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>
+        Email Header Forensics & <br />
+        Threat Trace-back Platform
+      </h1>
+
+      <p class="hero-subtitle">
+        A professional cybersecurity tool to analyze email headers,
+        detect phishing attempts, and trace threats using authentication
+        and routing intelligence.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/login" class="btn-login">
+          Analyze Email Headers
+        </a>
+        <span class="hero-note">
+          Google Sign-In required for analysis
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM OVERVIEW -->
+  <section id="about" class="platform-section">
+    <div class="container platform-grid">
+
+      <div class="platform-text">
+        <h2>Why Email Header Forensics?</h2>
+        <p>
+          Email remains the most exploited attack vector in cybersecurity.
+          Phishing emails often bypass visual detection, making header
+          analysis critical for identifying spoofed domains, forged
+          authentication, and suspicious routing paths.
+        </p>
+        <p>
+          This platform extracts and analyzes hidden metadata from email
+          headers to provide actionable forensic insights.
+        </p>
+      </div>
+
+      <div class="platform-stats">
+        <div class="stat-card">
+          <span class="stat-value">SPF</span><br>
+          <span class="stat-label">Sender Validation</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">DKIM</span><br>
+          <span class="stat-label">Message Integrity</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">DMARC</span><br>
+          <span class="stat-label">Policy Alignment</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">IP</span><br>
+          <span class="stat-label">Trace-back Analysis</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+ <section id="workflow" class="workflow-section forensic-how">
+  <div class="container">
+
+    <h2 class="section-title">How to Extract Email Headers</h2>
+    <p class="section-subtitle">
+      Email headers contain hidden routing, authentication, and delivery
+      metadata. Follow the steps below based on your email platform to
+      extract the complete header for forensic analysis.
+    </p>
+
+    <!-- PLATFORM STEPS -->
+    <div class="platform-steps">
+
+      <div class="platform-card">
+        <div class="platform-icon">🪟</div>
+        <h4>Windows Mail Clients</h4>
+        <ul>
+          <li>Open the email message</li>
+          <li>Select <strong>File → Properties</strong></li>
+          <li>Copy content from <strong>Internet Headers</strong></li>
+        </ul>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">🍎</div>
+        <h4>Apple Mail (macOS)</h4>
+        <ul>
+          <li>Open the email</li>
+          <li>Go to <strong>View → Message → All Headers</strong></li>
+          <li>Copy the complete header section</li>
+        </ul>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">📧</div>
+        <h4>Gmail (Web)</h4>
+        <ul>
+          <li>Open the email</li>
+          <li>Click <strong>⋮ → Show original</strong></li>
+          <li>Copy the full header text</li>
+        </ul>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">📨</div>
+        <h4>Outlook (Web)</h4>
+        <ul>
+          <li>Open the email</li>
+          <li>Select <strong>⋯ → View → Message details</strong></li>
+          <li>Copy the message headers</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- FORENSIC VALUE -->
+    <section id="features" div class="forensic-value">
+      <h3>What the Platform Analyzes</h3>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h5>Authentication Integrity</h5>
+          <p>
+            Verifies SPF, DKIM, and DMARC alignment to detect spoofed or
+            forged sender identities.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h5>Routing Path Analysis</h5>
+          <p>
+            Traces each mail server hop to identify abnormal paths,
+            relay abuse, or multi-country threat patterns.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h5>IP Geolocation Intelligence</h5>
+          <p>
+            Maps originating and relay IP addresses to geographic regions
+            for threat attribution.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h5>Risk Scoring & Verdict</h5>
+          <p>
+            Combines authentication, routing, and heuristics into a
+            quantified risk score with a clear verdict.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Investigate Suspicious Emails?</h2>
+      <p>Access the forensic dashboard and begin analysis.</p>
+      <a href="/login" class="btn-primary">
+        Launch Analysis Dashboard
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="landing-footer">
+    <div class="container">
+      <p>
+        Email Header Forensics & Threat Trace-back Portal<br />
+        Final Year Cybersecurity Project • B.Sc. IT • 2026
+      </p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+</html>

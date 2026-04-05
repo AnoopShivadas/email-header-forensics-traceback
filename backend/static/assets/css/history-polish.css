@@ -1,0 +1,91 @@
+/* =========================================
+   HISTORY STATS – POLISH LAYER (SAFE)
+========================================= */
+
+.history-stats {
+  align-items: stretch;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.12);
+}
+
+/* Icon above number */
+.stat-box::before {
+  content: attr(data-icon);
+  font-size: 22px;
+  opacity: 0.85;
+}
+
+/* Number styling */
+.stat-box strong {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Label */
+.stat-box span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Threat emphasis */
+.stat-box.danger {
+  background: linear-gradient(135deg, #fee2e2, #fff);
+}
+
+.stat-box.danger strong {
+  color: #dc2626;
+}
+
+/* =========================================
+   PAGINATION – POLISHED
+========================================= */
+
+.history-pagination button {
+  min-width: 90px;
+  transition: all .25s ease;
+}
+
+.history-pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white;
+  border-color: transparent;
+}
+
+.history-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* =========================================================
+   FINAL OVERRIDE – REMOVE SHINE, KEEP CLEAN HOVER
+   Applies ONLY to Launch Analysis Dashboard button
+========================================================= */
+
+/* Kill shine animation completely */
+.btn-primary::after {
+    content: none !important;
+}
+
+/* Clean, professional hover effect */
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+}
+
+/* Ensure smooth interaction */
+.btn-primary {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
