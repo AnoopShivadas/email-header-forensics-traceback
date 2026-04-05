@@ -1,41 +1,36 @@
-# 📧 Email Header Forensics & Threat Traceback Portal
-
-<p align="center">
-  <img src="https://img.shields.io/badge/status-production_ready-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/backend-Flask-black?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/frontend-HTML%2FCSS%2FJS-orange?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/database-SQLite-lightgrey?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/deployment-Render-green?style=for-the-badge"/>
-</p>
-
----
+<h1 align="center">Email Header Forensics & Threat Traceback Portal</h1>
 
 <p align="center">
   <b>Analyze • Trace • Detect</b><br>
-  A cybersecurity-focused web application for analyzing email headers, tracing origin IPs, and identifying potential threats.
+  <sub>A cybersecurity-focused platform for email header analysis, IP traceback, and threat detection</sub>
 </p>
 
 ---
-
-## 🎥 Live Demo
-
-👉 **Live Application:** https://your-deployed-link.com
-
-
----
-
-## 📸 Application Preview
 
 <p align="center">
-  <img src="https://your-image-link/results.png" width="850"/>
-</p>
-
-<p align="center">
-  <img src="https://your-image-link/map.gif" width="850"/>
+  <img src="https://img.shields.io/badge/STATUS-PRODUCTION_READY-2ecc71?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/VERSION-1.0.0-3498db?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/BACKEND-FLASK-black?style=for-the-badge&logo=flask"/>
+  <img src="https://img.shields.io/badge/FRONTEND-HTML%2FCSS%2FJS-orange?style=for-the-badge&logo=javascript"/>
+  <img src="https://img.shields.io/badge/DATABASE-SQLITE-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/DEPLOYMENT-RENDER-00c853?style=for-the-badge"/>
 </p>
 
 ---
+
+<p align="center">
+  🔗 <b>Live Application:</b><br>
+  <a href="https://your-deployed-link.com">https://your-deployed-link.com</a>
+</p>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AnoopShivadas/email-header-forensics-traceback/main/Email_GIF.gif" width="900"/>
+</p>
+
+---
+
 
 ## 🧠 Project Overview
 
