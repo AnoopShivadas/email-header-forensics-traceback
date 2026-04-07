@@ -3,7 +3,7 @@ import logging
 import urllib.request
 import json
 from typing import Any
-from geo_fallback import generate_fake_hops
+from backend.geo_fallback import generate_fake_hops
 
 logger = logging.getLogger(__name__)
 IPINFO_TOKEN = os.getenv("IPINFO_TOKEN", "")
