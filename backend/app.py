@@ -22,7 +22,6 @@ from backend.geo import lookup_multiple_ips
 from backend.risk import calculate_risk_score
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
-from models import UserSettings, User
 from datetime import datetime, timezone
 import uuid
 from flask import session
@@ -33,7 +32,7 @@ from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from flask import send_file
 from flask import render_template, session
-from models import SessionLocal, User, Analysis
+
 
 
 # ------------------------------------------------------------------
@@ -50,7 +49,7 @@ logger = logging.getLogger(__name__)
 
 
 def ensure_user_settings(db, user_id):
-    from models import UserSettings
+    from backend.models import UserSettings
     settings = db.query(UserSettings).filter_by(user_id=user_id).first()
     if not settings:
         settings = UserSettings(user_id=user_id)
