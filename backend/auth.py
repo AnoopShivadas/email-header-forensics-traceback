@@ -4,7 +4,7 @@ import uuid
 
 from flask import Blueprint, redirect, session, jsonify, url_for
 from authlib.integrations.flask_client import OAuth
-from models import SessionLocal, User
+from backend.models import SessionLocal, User
 
 auth_bp = Blueprint("auth", __name__)
 oauth = OAuth()
