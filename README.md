@@ -1,26 +1,23 @@
 <h1 align="center">Email Header Forensics & Threat Traceback Portal</h1>
 
 <p align="center">
-  <b>Analyze • Trace • Detect</b><br>
-  <sub>A cybersecurity-focused platform for email header analysis, IP traceback, and threat detection</sub>
+  <b>Advanced Email Threat Analysis & Header Intelligence Platform</b><br>
+  <sub>Analyze email headers, trace IP routing paths, and detect phishing risks using structured forensic insights</sub>
 </p>
 
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/STATUS-PRODUCTION_READY-2ecc71?style=for-the-badge&logo=vercel&logoColor=white"/>
-  <img src="https://img.shields.io/badge/VERSION-1.0.0-3498db?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/BACKEND-FLASK-black?style=for-the-badge&logo=flask"/>
-  <img src="https://img.shields.io/badge/FRONTEND-HTML%2FCSS%2FJS-orange?style=for-the-badge&logo=javascript"/>
-  <img src="https://img.shields.io/badge/DATABASE-SQLITE-lightgrey?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/DEPLOYMENT-RENDER-00c853?style=for-the-badge"/>
+  <a href="https://email-forensics-app.onrender.com/">
+    <img src="https://img.shields.io/badge/🚀 Live Demo-Explore Application-2ecc71?style=for-the-badge"/>
+  </a>
 </p>
 
----
-
 <p align="center">
-  🔗 <b>Live Application:</b><br>
-  <a href="https://email-forensics-app.onrender.com/">https://email-forensics-app.onrender.com/</a>
+  <img src="https://img.shields.io/badge/Backend-Flask-black?style=flat-square&logo=flask"/>
+  <img src="https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-orange?style=flat-square&logo=javascript"/>
+  <img src="https://img.shields.io/badge/Database-SQLite-lightgrey?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Deployment-Render-00c853?style=flat-square"/>
 </p>
 
 ---
