@@ -20,7 +20,7 @@
 
 <p align="center">
   🔗 <b>Live Application:</b><br>
-  <a href="https://your-deployed-link.com">https://your-deployed-link.com</a>
+  <a href="https://email-forensics-app.onrender.com/">https://email-forensics-app.onrender.com/</a>
 </p>
 
 ---
