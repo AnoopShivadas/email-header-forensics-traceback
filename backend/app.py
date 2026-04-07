@@ -14,12 +14,12 @@ from flask import (
     render_template
 )
 
-from auth import auth_bp, init_oauth
-from auth_utils import login_required
-from models import SessionLocal, Analysis, init_db
-from parser import parse_email_headers
-from geo import lookup_multiple_ips
-from risk import calculate_risk_score
+from backend.auth import auth_bp, init_oauth
+from backend.auth_utils import login_required
+from backend.models import SessionLocal, Analysis, init_db, UserSettings, User
+from backend.parser import parse_email_headers
+from backend.geo import lookup_multiple_ips
+from backend.risk import calculate_risk_score
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from models import UserSettings, User
