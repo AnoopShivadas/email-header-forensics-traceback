@@ -1,32 +1,36 @@
-<h1 align="center">Email Header Forensics & Threat Traceback Portal</h1>
+<h1 align="center">🔐 Email Header Forensics & Threat Traceback Portal</h1>
 
 <p align="center">
-  <b>Advanced Email Threat Analysis & Header Intelligence Platform</b><br>
-  <sub>Analyze email headers, trace IP routing paths, and detect phishing risks using structured forensic insights</sub>
+  Advanced Email Threat Analysis & Header Intelligence Platform
 </p>
 
----
+<p align="center">
+  Analyze email headers, trace routing paths, detect phishing indicators, and generate structured forensic insights.
+</p>
 
 <p align="center">
-  <a href="https://email-forensics-app.onrender.com/">
-    <img src="https://img.shields.io/badge/🚀 Live Demo-Explore Application-2ecc71?style=for-the-badge"/>
+  <a href="https://email-forensics-app.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Open%20Application-22c55e?style=for-the-badge"/>
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Backend-Flask-black?style=flat-square&logo=flask"/>
-  <img src="https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-orange?style=flat-square&logo=javascript"/>
-  <img src="https://img.shields.io/badge/Database-SQLite-lightgrey?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Deployment-Render-00c853?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Flask-Backend-black?logo=flask&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML%20%7C%20CSS%20%7C%20JS-Frontend-orange?logo=javascript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Cybersecurity-Forensics-red"/>
 </p>
 
----
+<br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AnoopShivadas/email-header-forensics-traceback/main/Email_GIF.gif" width="900"/>
+  <img 
+    src="https://raw.githubusercontent.com/AnoopShivadas/email-header-forensics-traceback/main/Email_GIF.gif" 
+    alt="Email Header Forensics Demo"
+    width="900"
+  />
 </p>
-
----
 
 
 ## 🧠 Project Overview
